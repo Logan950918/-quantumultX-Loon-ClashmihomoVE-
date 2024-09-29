@@ -1,4 +1,4 @@
-# rule_for_quantumultX
+# rule_for_quantumultX / LOON  其他的代理还没玩
 
 ## 📢 最近更新 
 - [今日油价](https://github.com/zqzess/rule_for_quantumultX/tree/master/js/Mine/gasoline)
@@ -22,24 +22,7 @@
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/zqzess/rule_for_quantumultX)
 ![GitHub repo size](https://img.shields.io/github/repo-size/zqzess/rule_for_quantumultX)
 -------
-## ⚠️注意
-**关于番茄小说广告**
-```ruby
-QuantumultX 需要重写和分流配合即 FanQieNovel.qxrewrite 和 FanQieNovel.list
-QuantumultX 如果添加了没有效果，请自行排查规则是否冲突，不是规则失效
-```
-```ruby
-Loon 只需要 FanQieNovel.plugin
-Surge 只需要 FanQieNovel.sgmodule
-Shadowrocket FanQieNovel.module
-该规则同样对番茄听书有效
-```
-**关于safari聚合搜索**
-```ruby
-Qsearch是百度搜索的，Safari默认的百度搜索就可以用
-Qsearchddg是DuckDuckgo的，需要更改为DuckDuckgo搜索
-推荐使用Qsearch
-```
+
 ## 🧭导航
 > [详细广告屏蔽列表](https://github.com/zqzess/rule_for_quantumultX/blob/master/AdBlockList.md)
 
