@@ -1,14 +1,5 @@
 # rule_for_quantumultX / LOON  其他的代理还没玩
 
-## 📢 最近更新 
-- [今日油价](https://github.com/zqzess/rule_for_quantumultX/tree/master/js/Mine/gasoline)
-- [v2free机场签到领流量](https://github.com/zqzess/rule_for_quantumultX/tree/master/js/Mine/v2freeCheckIn)
-- [switch游戏价格监控](https://github.com/zqzess/rule_for_quantumultX/tree/master/js/Mine/switchPriceMonitor)
-- [阿里云盘签到更新自动领取](https://github.com/zqzess/rule_for_quantumultX/tree/master/js/Mine/aDriveCheckIn)
-- [阿里云盘fake vip 测试版](https://github.com/zqzess/rule_for_quantumultX/tree/master/js/debug/aDriveCrack)
-- [新增倒数日脚本](https://github.com/zqzess/rule_for_quantumultX/tree/master/js/Mine/wnCalendar)
-- [新增今日黄历脚本](https://github.com/zqzess/rule_for_quantumultX/tree/master/js/Mine/wnCalendar)
-
 **推荐阅读**
 ----
 [自建代理转换站点(Sub-Store)](https://www.whitemoon.top/2022/09/18/zi-jian-de-dai-li-jie-dian-zhuan-huan-zhan-dian/)
