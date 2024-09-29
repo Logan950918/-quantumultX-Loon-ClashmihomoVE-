@@ -1,5 +1,5 @@
-# Sample Quantumult Configuration
-#
+# Quantumult 自用
+# 9-30 增加了APPle服务完整模块，需要自己调试
 # Line started with ";" or "#" or "//" shall be comments.
 # 以 ";" 或 "#" 或 "//" 开头的行为注释行。
 #
@@ -52,9 +52,9 @@ network_check_url = http://www.baidu.com
 server_check_url = http://www.gstatic.cn/generate_204
 
 # 节点页面的节点信息展示，可完整自定义展示内容与方式
-geo_location_checker = disabled
+;geo_location_checker = disabled
 ;geo_location_checker = http://ip-api.com/json/?lang=zh-CN, https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Quantumult/Script/geo_location_checker.js
-;geo_location_checker = http://ip-api.com/json/?lang=zh-CN, https://github.com/KOP-XIAO/QuantumultX/raw/master/Scripts/IP_API.js
+geo_location_checker = http://ip-api.com/json/?lang=zh-CN, https://github.com/KOP-XIAO/QuantumultX/raw/master/Scripts/IP_API.js
 ;geo_location_checker=http://extreme-ip-lookup.com/json/,https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/IPCheck.js
 ;geo_location_checker=http://api.live.bilibili.com/ip_service/v1/ip_service/get_ip_addr?,https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/IP_bili_cn.js
 ;geo_location_checker=http://ifconfig.co/json,https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/IPConfig.js
@@ -158,28 +158,26 @@ static=广告都掐死, reject, direct, img-url=https://raw.githubusercontent.co
 static=Apple, direct, Outside, 🚀 节点选择, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Social_Media/Apple.png
 static=AppleIOSUpdate, reject, direct, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Social_Media/Apple.png
 static=Microsoft, direct, Outside, 🚀 节点选择, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Social_Media/Delicious.png
-static=Netflix, Outside, direct, 🚀 节点选择, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Universal/Netflix.png
+static=Netflix, ♻️ 自动选择, Outside, direct, 🚀 节点选择, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Universal/Netflix.png
 static=YouTube, Outside, direct, 🚀 节点选择, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Social_Media/YouTube.png
 static=Spotify, Outside, proxy, direct, ♻️ 自动选择, 🔮 负载均衡, 🚀 手动切换, 香港节点, 日本节点, 台湾节点, 美国节点, 韩国节点, 俄罗斯节点, 新加坡节点, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Social_Media/Spotify.png
-static=GMedia, Outside, direct, 🚀 节点选择, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Universal/Airport.png
+static=GMedia, ♻️ 自动选择, Outside, direct, 🚀 节点选择, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Universal/Airport.png
 static=CMedia, direct, proxy, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Social_Media/Buzznet.png
 static=Speedtest, Outside, direct, 🚀 节点选择, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Universal/Speedtest.png
 static=Outside, proxy, direct, ♻️ 自动选择, 🔮 负载均衡, 🚀 节点选择, 🚀 手动切换, 香港节点, 日本节点, 台湾节点, 美国节点, 韩国节点, 俄罗斯节点, 新加坡节点,img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Universal/Final.png
 static=Mainland, direct, proxy, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Rounded_Rectangle/China.png
-static=Others, Outside, direct, ♻️ 自动选择, 🔮 负载均衡, 🚀 手动切换, 香港节点, 日本节点, 台湾节点, 美国节点, 韩国节点, 俄罗斯节点, 新加坡节点, 🚀 节点选择, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Google_Suite/Photos.png
+static=Others, Outside, direct, 🚀 节点选择, ♻️ 自动选择, 🔮 负载均衡, 🚀 手动切换, 香港节点, 日本节点, 台湾节点, 美国节点, 韩国节点, 俄罗斯节点, 新加坡节点, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Google_Suite/Photos.png
 
 
 
 [server_remote]
+https://sub.store/download/collection/%E5%90%88%E4%BD%93, tag=订阅, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_Update.png, update-interval=172800, opt-parser=false, enabled=true
 
-
-# > 魔法仅供临时使用1
-https://raw.githubusercontent.com/gitbigg/dy/main/jd#delreg=.*&rename=@tg%40ddgksf2021-+@num-$index7, tag=🐟临时使用, update-interval=3600, opt-parser=true, enabled=true
-# > 魔法仅供临时使用2
+ > 魔法仅供临时使用
 ;https://sub.sharecentre.online/sub#delreg=.*&rename=@tg%40ddgksf2021-+@num-$index7, tag=🐟临时使用, update-interval=3600, opt-parser=true, enabled=true
 
-
 [filter_remote]
+
 ;https://raw.githubusercontent.com/crossutility/Quantumult-X/master/filter.txt, tag=Sample, force-policy=your-policy-name, enabled=true
 
 #
@@ -193,6 +191,8 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Qu
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/WeChat/WeChat.list, tag=微信服务, force-policy=微信服务, update-interval=604800, opt-parser=true, enabled=true
 #tencent 开启 推荐策略：direct
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Tencent/Tencent.list, tag=腾讯服务, force-policy=腾讯服务, update-interval=604800, opt-parser=false, enabled=true
+#苹果推送
+https://raw.githubusercontent.com/Repcz/Tool/X/QuantumultX/Rules/APNs.list, tag=ApplePushService, force-policy=Apple, update-interval=172800, opt-parser=false, enabled=true
 #苹果服务
 https://raw.githubusercontent.com/zqzess/rule_for_quantumultX/master/QuantumultX/rules/Apple.list, force-policy=Apple,tag=Apple , enabled=true
 #苹果ios更新屏蔽
@@ -218,6 +218,14 @@ https://raw.githubusercontent.com/zqzess/rule_for_quantumultX/master/QuantumultX
 
 
 [rewrite_remote]
+https://github.com/VirgilClyne/iRingo/raw/main/snippet/Location.snippet, tag= iRingo: Location, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.quanx.conf, tag=siri, update-interval=172800, opt-parser=true, enabled=true
+https://github.com/VirgilClyne/iRingo/raw/main/snippet/TV.snippet, tag= iRingo: TV app, update-interval=172800, opt-parser=false, enabled=true
+https://github.com/NSRingo/Siri/releases/latest/download/Siri.snippet, tag= iRingo: ⭕ Siri & Search, update-interval=172800, opt-parser=false, enabled=true
+https://github.com/NSRingo/WeatherKit/releases/latest/download/WeatherKit.snippet, tag= iRingo: 🌤 WeatherKit, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/VirgilClyne/iRingo/main/snippet/WeatherKit.snippet, tag=WeatherKit, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/xiaomaoJT/QxScript/main/rewrite/script/QX_XiaoMao_rw5.conf, tag=会员脚本·自定义·XiaoMao重写5, update-interval=172800, opt-parser=true, enabled=true
+
 
 #zqzess自用重写
 https://raw.githubusercontent.com/zqzess/rule_for_quantumultX/master/QuantumultX/rewrite/MyRewrite.conf, tag=zqzess自用重写, update-interval=86400, opt-parser=true, enabled=false
@@ -230,10 +238,15 @@ https://github.com/ddgksf2013/dev/raw/master/ForOwnUse.conf, tag=墨鱼专属VIP
 # ======= 功能增强 ======= #
 https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.adblock.js, tag=百度网盘净化@ddgksf2013, update-interval=86400, opt-parser=true, enabled=true
 https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/Function/UnblockURLinWeChat.conf, tag=微信解锁被屏蔽的URL@zZPiglet, update-interval=86400, opt-parser=false, enabled=true
+#彩云天气
+https://raw.githubusercontent.com/xiaomaoJT/QxScript/main/rewrite/boxJS/XiaoMaoCaiYunWeather.js, tag=XiaoMaoCaiYunWeather, update-interval=172800, opt-parser=true, enabled=true
+#苹果家族完整服务规则
 #SUB-store
 https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/QX.snippet, tag=Sub Store, update-interval=172800, opt-parser=true, enabled=true
-#Box.js商店版
-https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.quanx.conf, tag=BoxJS商店版@chavyleung, update-interval=86400, opt-parser=false, enabled=true
+
+#cookie 获取成功后禁用
+
+#用于辅助其他模块，无需禁用
 #波点音乐mv屏蔽
 https://raw.githubusercontent.com/zqzess/rule_for_quantumultX/master/QuantumultX/rewrite/bodianMusic.conf, tag=波点音乐mv屏蔽, update-interval=86400, opt-parser=false, enabled=true
 #搬运脚本合集
@@ -355,7 +368,8 @@ final, Others
 #
 [rewrite_local]
 
-
+# > boxjs（多数情况下均需要该重写，请不要修改此重写）
+ttps?:\/\/(.+\.)?boxjs\.(com|net) url script-analyze-echo-response https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js
 
 ;^http://example\.com/resource1/1/ url reject
 ;^http://example\.com/resource1/2/ url reject-img
@@ -385,12 +399,31 @@ final, Others
 # Supports 5 or 6 fields of cron excluding the command field.
 #
 [task_local]
+0 0 1 1 * BBC456B4045E.js, enabled=true
+30 8-22 * * * https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/caiyun.js, tag=彩云天气, img-url=https://raw.githubusercontent.com/shoujiqiyuan/PokemonGOforQuanX/master/IconSet/Z012.png, enabled=true
+55 23 * * * https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/cron-sync-artifacts.min.js, tag=Sub-Store Sync, img-url=https://raw.githubusercontent.com/58xinian/icon/master/Sub-Store1.png, enabled=true
+event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/switch-check-disneyplus.js, tag=Disneyᐩ 切换, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Disney.png, enabled=true
+event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/nf-ui-check.js, tag=Netflix 查询, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix_Letter.png, enabled=true
+event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/geo_location.js, tag=GeoIP 查询, img-url=location.fill.viewfinder.system, enabled=true
+0 0 9 * * ? https://raw.githubusercontent.com/xiaomaoJT/QxScript/main/rewrite/boxJS/XiaoMaoTyhoon.js, tag=🌀XiaoMao_台风监测, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Blackhole.png, enabled=true
+event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/server-info-plus.js, tag=节点风险查询, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/SaySS.png, enabled=true
+event-interaction https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/NodeLinkCheck/Script/NodeLinkCheck.js, tag=节点链路查询, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Stack.png, enabled=true
+event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/traffic-check.js, tag=策略流量查询, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Download.png, enabled=true
+event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/streaming-ui-check.js, tag=媒体解锁查询, img-url=checkmark.seal.system, enabled=true
+event-interaction https://raw.githubusercontent.com/getsomecat/Qx/main/Net_Speed.js, tag=节点网速查询, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Speedtest.png, enabled=true
+event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/switch-check-google.js, tag=谷歌送中查询, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Puzzle.png, enabled=true
+0 0 2 * * ? https://raw.githubusercontent.com/xiaomaoJT/QxScript/main/rewrite/boxJS/XiaoMaoAppleUpdateVerification.js, tag=XiaoMao_Apple验证通道, img-url=https://raw.githubusercontent.com/tugepaopao/Image-Storage/master/cartoon/Cute/apple.png, enabled=false
+event-interaction https://raw.githubusercontent.com/xiaomaoJT/QxScript/main/rewrite/script/txt/ipinfo.txt, tag=节点位置查询, img-url=https://raw.githubusercontent.com/tugepaopao/Image-Storage/master/cartoon/Cute/3icon.png, enabled=true
+0 0 1 * * ? https://raw.githubusercontent.com/xiaomaoJT/QxScript/main/rewrite/boxJS/XiaoMaoAppleDeveloper.js, tag=XiaoMao_Beta更新, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Social_Media/Apple.png, enabled=false
+0 0 9 * * ? https://raw.githubusercontent.com/xiaomaoJT/QxScript/main/rewrite/boxJS/source/hs.js, tag=🌌星座运势, img-url=https://raw.githubusercontent.com/xiaomaoJT/QxScript/main/rewrite/boxJS/icon/star.png, enabled=true
+0 0 8 * * ? https://raw.githubusercontent.com/xiaomaoJT/QxScript/main/rewrite/boxJS/XiaoMaoHoliday.js, tag=💢年度节日自动推送, img-url=https://raw.githubusercontent.com/shoujiqiyuan/PokemonGOforQuanX/master/IconSet/Z002.png, enabled=true
 
 [http_backend]
-;https://raw.githubusercontent.com/crossutility/Quantumult-X/master/sample-backend.js, tag=fileConverter, path=^/example/v1/
-;preference.js, tag=userPreference, path=^/preference/v1/, img-url=https://example.com, enabled=true
-;convert.js, tag=fileConverter, path=^/convert/v1/
+https://raw.githubusercontent.com/crossutility/Quantumult-X/master/sample-backend.js, tag=fileConverter, path=^/example/v1/
 
+# > Boxjs设置，改为使用http backend方式，访问地址改为http://127.0.0.1:9999，更新配置后请长按风车-更新，然后重启代理
+# > BoxJs相关教程参考「https://docs.boxjs.app」
+https://raw.githubusercontent.com/chavyleung/scripts/master/chavy.box.js, host=boxjs.com, tag=BoxJS, path=^/, enabled=true
 
 #
 # Only the TLS SNI or destination address in "hostname" will be handled by MitM.
