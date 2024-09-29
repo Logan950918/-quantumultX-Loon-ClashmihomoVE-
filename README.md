@@ -1,3 +1,5 @@
+感谢 @可莉,@lucky
+主要为自己用。
 # rule_for_quantumultX / LOON  其他的代理还没玩
 
 **推荐阅读**
