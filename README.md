@@ -1,6 +1,6 @@
-感谢 @可莉,@lucky
+
 主要为自己用。
-# rule_for_quantumultX / LOON  其他的代理还没玩
+#-quantumultX-Loon-Clashmihomo,Clashve 其他的代理还没玩
 
 **推荐阅读**
 ----
@@ -33,18 +33,60 @@
 
 > [脚本](https://github.com/zqzess/rule_for_quantumultX/tree/master/js/Mine)
 
-### 参考鸣谢
-- [@h2y](https://github.com/h2y)
-- [@blackmatrix7](https://github.com/blackmatrix7/ios_rule_script)
-- [@jdlingyu](https://github.com/jdlingyu/ad-wars/blob/master/hosts)
-- [@Tartarus2014](https://github.com/Tartarus2014/QuantumultX-Script)
-- [@GeQ1an](https://github.com/GeQ1an/Rules/tree/master)
-- [@Koolson](https://github.com/Koolson/Qure)
-- [@NobyDa](https://github.com/NobyDa/Script)
-- [@TributePaulWalker](https://github.com/TributePaulWalker/Profiles)
-- [@Peng-YM](https://github.com/Peng-YM)
-- [@lhie1](https://github.com/lhie1/Rules)
-- [@chavyleung](https://github.com/chavyleung)
+### 参考鸣谢 排名不分前后
+@Tartarus2014
+
+@lucky
+
+@nzw9314
+
+Qure
+
+Orz
+
+@NobyDa
+
+@lhie1
+
+@ConnersHua
+
+@chavyleung
+
+@yichahucha
+
+@langkhach270389
+
+@Choler
+
+@onewayticket255
+
+@NavePnow
+
+@Meeta
+
+@Neurogram-R
+
+@sazs34
+
+@uniqueque
+
+@eHpo
+
+@Sunert
+
+@songyangzz
+
+@zZPiglet
+
+@Peng-YM
+
+@evilbutcher
+
+@lxk0301
+
+@toulanboy
+
+@lowking
 
 ### 访问量
 
