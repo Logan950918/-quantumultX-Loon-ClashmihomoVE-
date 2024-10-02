@@ -1,0 +1,101 @@
+  "id": "logan0918",
+    "name": "logan订阅合集",
+    "author": "logan",
+    "icon": "http://qxnav.com/images/molu.png",
+    "repo": "https://qxnav.com/rules/QuantumultX/qixin.boxjs.json",
+    "updatetime": "2021.5.17",
+    "message": "个人自用合集，不定时更新，不喜勿喷！",
+    "apps": [     "id": "gistBackup",
+            "name": "gist 备份",
+            "keys": [
+                "@gist.token",
+                "@gist.username"
+            ],
+            "author": "@dompling",
+            "icons": [
+                "https://github.githubassets.com/favicons/favicon.png",
+                "https://github.githubassets.com/favicons/favicon.png"
+            ],
+            "descs_html": [
+                "Token的获取方式:",
+                "头像菜单->\n      Settings ->\n      Developer settings ->\n      Personal access tokens ->\n      Generate new token ->\n      在里面找到 gist 勾选提交"
+            ],
+            "scripts": [
+                {
+                    "name": "备份 Gist",
+                    "script": "https://raw.githubusercontent.com/dompling/Script/master/gist/backup.js"
+                },
+                {
+                    "name": "从 Gist 恢复",
+                    "script": "https://raw.githubusercontent.com/dompling/Script/master/gist/restore.js"
+                }
+            ],
+            "settings": [
+                {
+                    "id": "@gist.username",
+                    "name": "用户名",
+                    "val": null,
+                    "type": "text",
+                    "placeholder": "github 用户名",
+                    "desc": "必填"
+                },
+                {
+                    "id": "@gist.token",
+                    "name": "Personal access tokens",
+                    "val": null,
+                    "type": "text",
+                    "placeholder": "github personal access tokens",
+                    "desc": "必填"
+                }
+            ]
+        },
+{
+        "event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/streaming-ui-check.js, tag=流媒体-解锁查询, img-url=checkmark.seal.system, enabled=true",
+        "event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/geo_location.js, tag=GeoIP 查询, img-url=location.fill.viewfinder.system",
+        "event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/ytb-ui-check.js, tag=YouTube 查询, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube_Letter.png, enabled=true",
+        "event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/nf-ui-check.js, tag=Netflix 查询, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix_Letter.png, enabled=true",
+        "event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/disney-ui-check.js, tag=Disneyᐩ 查询, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Disney.png, enabled=true",
+        "event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/switch-check-ytb.js, tag=YouTube 切换, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube_Letter.png, enabled=true",
+        "event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/switch-check-nf.js, tag=Netflix 切换, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix_Letter.png, enabled=true",
+        "event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/switch-check-disneyplus.js, tag=Disneyᐩ 切换, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Disney.png, enabled=true",
+        "event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/switch-check-google.js, tag=Google 切换, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google.png, enabled=true",
+        "event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/traffic-check.js, tag=策略流量查询, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Download.png, enabled=true",
+        "event-network network-direct.js, tag=Direct 策略切换, img-url=switch.2.system",
+        "event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/server-info-plus.js, tag=节点信息Plus, img-url=info.bubble.system.system"
+    ]
+}， {
+      "id": "SET_TIME",
+      "name": "定时任务",
+      "keys": ["@SET_TIME.TASK", "@SET_TIME.SUB", "@SET_TIME.CACHE"],
+      "author": "@dompling",
+      "settings": [
+        {
+          "id": "@SET_TIME.SUB",
+          "name": "任务订阅",
+          "val": "",
+          "type": "textarea",
+          "desc": "QX 定时任务配置",
+          "primary": ["author"],
+          "autoGrow": false,
+          "rows": 8,
+          "child": [
+            {
+              "id": "author",
+              "name": "作者",
+              "type": "text"
+            },
+            {
+              "id": "url",
+              "name": "订阅链接",
+              "type": "text"
+            }
+          ]
+        }
+      ],
+      "icons": [
+        "https://raw.githubusercontent.com/dompling/Script/master/icon/setTime.png",
+        "https://raw.githubusercontent.com/dompling/Script/master/icon/setTime.png"
+      ]
+    }
+  ]
+}
