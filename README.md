@@ -1,7 +1,9 @@
 
 主要为自己用。
 #-quantumultX-Loon-Clashmihomo,Clashve 其他的代理还没玩
-
+最感谢的人
+https://github.com/luestr/ProxyResource    可莉
+https://github.com/Moli-X/Resources   莫离
 **推荐阅读**
 ----
 [自建代理转换站点(Sub-Store)](https://www.whitemoon.top/2022/09/18/zi-jian-de-dai-li-jie-dian-zhuan-huan-zhan-dian/)
