@@ -1,0 +1,301 @@
+# mihomo/win10 win11都可以用
+#  Logan   2024-10-29
+# 官方文档：https://wiki.metacubex.one/
+#  根据高大上,可利.莫里等多位大佬规则搓出,主要用于广告屏蔽,国内外直接连接,没有花里胡哨.
+# 以 '#' 或 '//' 开头的配置文件行为注释行
+
+# [端口设置]
+port: 7890                # HTTP   端口
+socks-port: 7891          # SOCKS  端口
+redir-port: 7892          # REDIR  端口
+mixed-port: 7893          # MIXED  端口
+tproxy-port: 7894         # TPROXY 端口
+
+# [全局配置]
+tcp-concurrent: true      # TCP并发
+allow-lan: true           # 允许LAN
+log-level: info           # 日志级别
+mode: rule                # 运行模式
+unified-delay: true       # 统一延迟
+ipv6: true                # 启用IPv6
+find-process-mode: strict # 进程匹配模式
+external-controller: 0.0.0.0:9090
+global-client-fingerprint: chrome
+
+# [缓存设置]
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+# [GEO设置]
+geodata-mode: true
+geo-auto-update: true
+geo-update-interval: 24
+geox-url:
+  geoip: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat"
+  geosite: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
+  mmdb: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb"
+
+
+# [TUN设置]
+tun:
+  enable: true
+  stack: system
+  dns-hijack:
+    - any:53
+  auto-route: true
+  auto-detect-interface: true
+
+# [DNS设置]
+dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  ipv6: false
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '*.lan'
+    - 'localhost.ptlogin2.qq.com'
+  nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+
+# [嗅探设置]
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: true
+  sniff:
+    HTTP:
+      ports: [80,8080-8880]
+      override-destination: true
+    TLS:
+      ports: [443,8443]
+    QUIC:
+      ports: [443,8443]
+
+##机场订阅      
+p: &p {type: http, interval: 86400, health-check: {enable: true, url: http://connectivitycheck.gstatic.com/generate_204, interval: 1800, timeout: 5000}}
+proxy-providers:
+  SUB-store: # 在此将 "http://your-service-provider" 替换为你的机场订阅，推荐使用 base64 或者 node list
+    url: http://your-service-provider
+    <<: *p
+
+# [策略组]
+proxy-groups:
+  - name: "手动切换"
+    type: select
+    lazy: true
+    icon: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Gallery/Color/Static.png
+    proxies:
+      - DIRECT
+      - 全球最快
+      - 香港节点
+      - 台湾节点
+      - 日本节点
+      - 韩国节点
+      - 狮城节点
+      - 美国节点
+    
+  - name: "全球最快"
+    type: url-test
+    lazy: true
+    icon: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Gallery/Color/Available.png
+    use: 
+      - SUB-store
+    url: "https://cp.cloudflare.com/generate_204"
+    interval: 1800
+
+  - name: "国内直达"
+    type: select
+    icon: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Gallery/Color/StreamingCN.png
+    proxies:
+      - 手动切换 
+      - DIRECT
+      - 全球最快
+      - 香港节点
+      - 台湾节点
+      - 日本节点
+      - 韩国节点
+      - 狮城节点
+      - 美国节点
+
+      
+  - name: "国际媒体"
+    type: select
+    icon: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Gallery/Color/Streaming.png
+    proxies: 
+      - 手动切换 
+      - DIRECT
+      - 全球最快
+      - 香港节点
+      - 台湾节点
+      - 日本节点
+      - 韩国节点
+      - 狮城节点
+      - 美国节点
+    
+  - name: "广告必须死"
+    type: select
+    icon: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Gallery/Color/Streaming.png
+    proxies: 
+      - REJECT    
+
+
+  - name: "漏网之鱼"
+    type: select
+    icon: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Gallery/Color/Final.png
+    proxies: 
+      - 手动切换 
+      - DIRECT
+      - 全球最快
+      - 香港节点
+      - 台湾节点
+      - 日本节点
+      - 韩国节点
+      - 狮城节点
+      - 美国节点
+
+
+#热门国家地区策略组
+  - name: "香港节点"
+    type: url-test
+    lazy: true
+    icon: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Gallery/Color/HK.png
+    filter: "香港|港|HK|🇭🇰|(?i)Hong"
+    use: 
+      - SUB-store
+    url: "https://cp.cloudflare.com/generate_204"
+    interval: 1800
+
+  - name: "台湾节点"
+    type: url-test
+    lazy: true
+    icon: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Gallery/Color/TW.png
+    filter: "台湾|台|TW|🇹🇼|(?i)Taiwan"
+    use: 
+      - SUB-store
+    url: "https://cp.cloudflare.com/generate_204"
+    interval: 1800
+
+  - name: "日本节点"
+    type: url-test
+    lazy: true
+    icon: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Gallery/Color/JP.png
+    filter: "日本|日|JP|🇯🇵|(?i)Japan"
+    use: 
+      - SUB-store
+    url: "https://cp.cloudflare.com/generate_204"
+    interval: 1800
+
+  - name: "韩国节点"
+    type: url-test
+    lazy: true
+    icon: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Gallery/Color/KR.png
+    filter: "韩国|韩|KR|🇰🇷|(?i)Korea"
+    use: 
+      - SUB-store
+    url: "https://cp.cloudflare.com/generate_204"
+    interval: 1800
+
+  - name: "狮城节点"
+    type: url-test
+    lazy: true
+    icon: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Gallery/Color/SG.png
+    filter: "新加坡|狮|SG|🇸🇬|(?i)Singapore"
+    use: 
+      - SUB-store
+    url: "https://cp.cloudflare.com/generate_204"
+    interval: 1800
+ 
+  - name: "美国节点"
+    type: url-test
+    lazy: true
+    icon: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Gallery/Color/US.png
+    filter: "美国|美|US|🇺🇸|(?i)States"
+    use:
+      - SUB-store
+    url: "https://cp.cloudflare.com/generate_204"
+    interval: 1800
+
+
+
+    # [本地规则]
+rules:
+  - RULE-SET,规则修正,DIRECT
+  - RULE-SET,广告拦截,广告必须死
+#下面这几个是DNF
+  - DOMAIN-SUFFIX,dnf.games.qq.com,DIRECT
+  - DOMAIN-SUFFIX,dnf.qq.com,DIRECT
+  - DOMAIN-SUFFIX,qq.com,DIRECT
+  - DOMAIN,neople.co.kr,DIRECT
+  - RULE-SET,国际媒体,国际媒体
+  - RULE-SET,国内媒体,国内直达
+  - RULE-SET,全球加速,国际媒体
+#  - RULE-SET,苹果服务,DIRECT
+  - RULE-SET,局域网络,DIRECT
+  - RULE-SET,国内直达,国内直达
+  - MATCH,漏网之鱼
+
+
+# [远程规则]
+rule-providers:
+  规则修正:
+    behavior: classical
+    interval: 86400
+    type: http
+    path: ./Ruleset/Unbreak.yaml
+    url: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Clash/Ruleset/Unbreak.yaml
+
+  广告拦截:
+    behavior: domain
+    interval: 86400
+    type: http
+    path: ./Ruleset/AdBlock.yaml
+    url: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Clash/Ruleset/AdBlock.yaml
+
+  国际媒体:
+    behavior: classical
+    interval: 86400
+    type: http
+    path: ./Ruleset/Streaming.yaml
+    url: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Clash/Ruleset/Streaming.yaml
+
+  国内媒体:
+    behavior: classical
+    interval: 86400
+    type: http
+    path: ./Ruleset/StreamingCN.yaml
+    url: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Clash/Ruleset/StreamingCN.yaml
+
+  全球加速:
+    behavior: classical
+    interval: 86400
+    type: http
+    path: ./Ruleset/Global.yaml
+    url: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Clash/Ruleset/Global.yaml
+
+# 苹果服务:
+#    behavior: classical
+ #   interval: 86400
+  #  type: http
+  #  path: ./Ruleset/Apple.yaml
+   # url: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Clash/Ruleset/Apple.yaml
+
+  局域网络:
+    behavior: classical
+    interval: 86400
+    type: http
+    path: ./Ruleset/LAN.yaml
+    url: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Clash/Ruleset/LAN.yaml
+
+  国内直达:
+    behavior: classical
+    interval: 86400
+    type: http
+    path: ./Ruleset/GEOIPCN.yaml
+    url: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Clash/Ruleset/GEOIPCN.yaml
