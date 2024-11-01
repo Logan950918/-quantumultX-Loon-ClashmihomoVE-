@@ -1,3 +1,6 @@
+#规则分流重谢请移步自隔壁仓库https://github.com/Logan950918/fok-blackmatrix7,或黑7原仓库https://github.com/blackmatrix7/ios_rule_script/. 
+#主要是署名自己太恶心了,我实在无法接受他人劳动成果自己书署名.
+
 # Loon ,主要更新，其他为次要，想尝试使用请使用转换工具。
 # 
 # 如非Loon 代理使用。那么请使用转换尝试，由于熬夜了一晚上，我现在没有足够的时间去测试。
